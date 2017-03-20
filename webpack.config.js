@@ -13,13 +13,17 @@ module.exports = {
   },
 
   module: {
-  {
-    test: /\.scss$/,
-    loader: 'style-loader!css-loader!sass-loader?resolve url'
-  }, {
-    test: /\.(png|jpg|svg|ttf|eot|woff|woff2)$/,
-    loader: 'file?name=[path][name].[ext]?[hash]'
-  }]
 
-},
+    loaders: [{
+      test: /\.jade$/,
+      loader: "jade"
+    }, {
+      test: /\.scss$/,
+      loader: 'style-loader!css-loader!sass-loader?resolve url'
+    }, {
+      test: /\.(png|jpg|svg|ttf|eot|woff|woff2)$/,
+      loader: 'file?name=[path][name].[ext]?[hash]'
+    }]
+
+  },
 };
