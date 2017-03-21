@@ -12,15 +12,16 @@ module.exports = {
 
   module: {
 
-    loaders: [
-     {
+    loaders: [{
       test: /\.scss$/,
       loader: 'style-loader!css-loader!sass-loader?resolve url'
     }, {
       test: /\.(png|jpg|svg|ttf|eot|woff|woff2)$/,
       loader: 'url-loader?limit=50000&name=app/img/[name].[ext]'
-    },{ test: /\.css$/,
-      loader: "style-loader!css-loader" }]
+    }, {
+      test: /\.css$/,
+      loader: "style-loader!css-loader"
+    }]
 
   },
 };
