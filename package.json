@@ -9,7 +9,6 @@
     "start": "npm run server"
   },
   "devDependencies": {
-    "angular-mocks": "^1.5.5",
     "css-loader": "^0.27.3",
     "file-loader": "^0.10.1",
     "node-sass": "^4.5.0",
@@ -22,14 +21,8 @@
   },
   "author": "LV-227",
   "license": "ISC",
-  "dependencies": {
-    "@angular/common": "^2.4.10",
-    "@angular/core": "^2.4.10",
-    "@angular/platform-browser": "^2.4.10",
-    "@angular/router": "^3.4.10",
+  "dependencies": {  
     "angular": "^1.6.0",
-    "angular-ui-router": "^0.3.1",
-    "rxjs": "^5.2.0",
-    "zone.js": "^0.7.2"
+    "angular-ui-router": "^0.3.2"
   }
 }
