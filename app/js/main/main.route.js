@@ -1,6 +1,6 @@
 'use strict';
 module.exports = angular
-  .module('neighbors.main.route', [])
+  .module('school-area.main.route', [])
   .config(function($stateProvider, $urlRouterProvider) {
       $stateProvider.state({ 
         name: 'main',

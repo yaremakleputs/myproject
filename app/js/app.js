@@ -1,7 +1,7 @@
 var angular = require('angular'),
     mainModule = require('./main/main.module.js');
     require('../css/style.scss');
-angular.module('neighbors',
+angular.module('school-area',
     [
       mainModule.name
     ])
