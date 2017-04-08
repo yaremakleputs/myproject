@@ -12,6 +12,7 @@
     "css-loader": "^0.27.3",
     "file-loader": "^0.10.1",
     "node-sass": "^4.5.0",
+    "sass-lint": "^1.10.2",
     "sass-loader": "^6.0.3",
     "style-loader": "^0.14.1",
     "url-loader": "^0.5.8",
@@ -22,6 +23,7 @@
   "license": "ISC",
   "dependencies": {
     "angular": "^1.6.0",
-    "angular-ui-router": "^0.3.2"
+    "angular-ui-router": "^0.3.2",
+    "scsslint": "0.0.3"
   }
 }

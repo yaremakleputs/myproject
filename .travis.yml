@@ -3,6 +3,9 @@ language: node_js
 before_script:
   - npm install
   - npm install jscs -g
+  - npm install -g sass-lint
 
 script:
   - jscs app
+  - sass-hint 'app/**/*.scss' -v -q
+
