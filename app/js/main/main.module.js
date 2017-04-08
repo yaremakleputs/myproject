@@ -1,8 +1,9 @@
-var mainRoute = require('./main.route'),
-    mainComponent = require('./components/main.component.js');
-module.exports = angular.module("school-area.main", [
-  // components
-  require('angular-ui-router'),
-  mainComponent.name,
-  mainRoute.name
-]);
+var mainComponent = require('./components/main.component.js'),
+    mainRoute = require('./main.route.js');
+    require('../../css/style.scss');
+
+module.exports = angular
+  .module('school_area.main', [
+    mainComponent.name,
+    mainRoute.name
+  ]);

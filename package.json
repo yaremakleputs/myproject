@@ -1,12 +1,12 @@
 {
-  "name": "school-area",
+  "name": "school_area",
   "version": "0.0.1",
   "description": "will be added later",
   "main": "index.js",
   "scripts": {
-    "build": "webpack && webpack-dev-server",
-    "server": "webpack-dev-server --history-api-fallback --inline --progress --port 1111",
-    "start": "npm run server"
+    "server": "webpack-dev-server --history-api-fallback --watch-content-base --hot --progress --port 1111",
+    "start": "npm run server",
+    "run": "webpack -p"
   },
   "devDependencies": {
     "css-loader": "^0.27.3",
@@ -16,12 +16,11 @@
     "style-loader": "^0.14.1",
     "url-loader": "^0.5.8",
     "webpack": "^2.2.1",
-    "webpack-dev-server": "^2.4.2",
-    "webpack-node-externals": "^1.5.4"
+    "webpack-dev-server": "^2.4.2"
   },
   "author": "LV-227",
   "license": "ISC",
-  "dependencies": {  
+  "dependencies": {
     "angular": "^1.6.0",
     "angular-ui-router": "^0.3.2"
   }

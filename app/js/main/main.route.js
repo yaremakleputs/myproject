@@ -1,10 +1,10 @@
-'use strict';
 module.exports = angular
-  .module('school-area.main.route', [])
+  .module('school_area.main.route', [])
   .config(function($stateProvider, $urlRouterProvider) {
-      $stateProvider.state({ 
-        name: 'main',
-        url: '/', 
-        template: '<app-main></app-main>'
-      });
-  });
+    $urlRouterProvider.otherwise('/');
+    $stateProvider.state({
+      url: '/',
+      name: 'main',
+      template: '<main-component></main-component>'
+    })
+  })

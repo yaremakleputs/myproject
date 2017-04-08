@@ -1,15 +1,10 @@
-var path = require('path');
 module.exports = {
   entry: "./app/js/app.js",
   output: {
     path: __dirname,
     filename: "bundle.js"
   },
-
-  devServer: {
-    //hot: true
-  },
-
+  
   module: {
 
     loaders: [{

@@ -1,12 +1,10 @@
-'use strict';
 module.exports = angular
-  .module('school-area.main.component', [])
-  .component('appMain', {
-    templateUrl: '/app/js/main/components/main.template.html',
-    controller: MainController,
-    transclude: true
-    });
+  .module('school_area.main.component',[]) 
+  .component('mainComponent', {
+    templateUrl: './app/js/main/components/main.template.html',
+    controller: MainController
+  });
 
-function MainController(){
+function MainController() {
   var ctrl = this;
-}
+};
