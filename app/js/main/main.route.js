@@ -6,5 +6,5 @@ module.exports = angular
       url: '/',
       name: 'main',
       template: '<main-component></main-component>'
-    })
-  })
+    });
+  });
