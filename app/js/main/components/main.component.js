@@ -1,5 +1,5 @@
 module.exports = angular
-  .module('school_area.main.component',[]) 
+  .module('school_area.main.component', [])
   .component('mainComponent', {
     templateUrl: './app/js/main/components/main.template.html',
     controller: MainController
