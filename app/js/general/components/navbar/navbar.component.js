@@ -7,6 +7,6 @@ module.exports = angular
     transclude: true
   });
 
-function NavbarController(){
+function NavbarController() {
   var ctrl = this;
 }

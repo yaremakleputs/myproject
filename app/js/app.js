@@ -5,7 +5,6 @@ var angular = require('angular'),
 
 angular
   .module('school_area', [
-         'ngMaterial',
     vendorModule.name,
     generalModule.name,
     mainModule.name

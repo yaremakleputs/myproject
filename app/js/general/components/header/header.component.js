@@ -7,6 +7,6 @@ module.exports = angular
     transclude: true
   });
 
-function HeaderController(){
+function HeaderController() {
   var ctrl = this;
 }
