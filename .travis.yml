@@ -7,5 +7,5 @@ before_script:
 
 script:
   - jscs app
-  - sass-hint 'app/**/*.scss' -v -q
+  - sass-lint 'app/**/*.scss' -v -q
 
