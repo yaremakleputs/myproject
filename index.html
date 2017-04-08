@@ -8,7 +8,11 @@
 </head>
 
 <body>
-    <section ui-view></section>
+    <app-header> </app-header>
+    <div layout="row">
+    <app-navbar flex="20"></app-navbar>
+    <main flex="80" ui-view></main>
+    </div> 
     <script src="bundle.js"></script>
 </body>
 
