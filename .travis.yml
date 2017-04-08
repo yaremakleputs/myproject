@@ -8,4 +8,5 @@ before_script:
 script:
   - jscs app
   - sass-lint 'app/**/*.scss' -v -q
+  - sass-lint 'app/**/*.css' -v -q
 
