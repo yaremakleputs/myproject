@@ -1,16 +1,196 @@
-<<<<<<< 4ac206c3f8407533b45b4da3e6228fe26dd4aeb9
-=======
-h1 {
- color:silver;
+.header{
+    .logo{
+        width: 270px;
+        img{
+            height:70px;
+        }
+    }
+    #toolbar{
+        background:white;
+    }
+    #select{
+        border: 1px solid #d7d7d7;
+    border-radius: 10px;
+    background-color: white;
+    padding: 0px 10px;
+    font-size: 14px;
+    height: 38px;
+    &:hover{
+        border: 1px solid #428bca;
+      box-shadow: 1px 2px 4px rgba(0, 0, 0, .5);
+    }
+    }
+  #today{
+    font-size: 32px;
+    color: #95c948;
+  }
+  .avatar{
+    width: 50px;
+    min-width: 50px;
+    height: 50px;
+    line-height: 40px;
+    margin: 0 8px 0 0;
+    border-radius: 50%;
+    font-size: 17px;
+    font-weight: 500;
+    text-align: center;
+    color: #FFF;
+  }
+  .user-button {
+    margin: 0;
+    padding: 0 16px;
+    height: 64px;
+    text-transform: none;
+ }
+ .username{
+    margin: 10px;
+ }
 }
-body{
-  text-align:center;
+
+nav {
+    max-width: 270px;
+    border: 1px solid #ebebeb;
+
+    a {
+        font-size: 17px;
+        font-weight: 400;
+        text-decoration: none;
+        color: #9c9d9d;
+    }
+
+    ul {
+        list-style-type: none;
+        padding-left: 0;
+
+        .journal {
+            background-color: #92c948;
+            padding: 3px 0 3px 0;
+            width: 100%;
+            text-align: left;
+            cursor: pointer;
+            margin-bottom: 15px;
+
+            a {
+                text-decoration: none;
+                color: #ffffff;
+                position: relative;
+                display: block;
+                padding: 15px 0 15px 90px;
+
+                &:before {
+                    display: block;
+                    content: ' ';
+                    background-image: url(../img/icon/journal.svg);
+                    width: 40px;
+                    height: 40px;
+                    top: 5px;
+                    left: 35px;
+                    position: absolute;
+                    color: white;
+                }
+            }
+        }
+
+        ul {
+            .active {
+                border-left: 5px solid #92c948;
+                max-width: 263px;
+
+                a {
+                    color: #92c948;
+                    position: relative;
+                    display: block;
+                    padding: 10px 0 10px 125px;
+                }
+            }
+
+            li {
+                width: 100%;
+                position: relative;
+                padding-top: 5px;
+
+                &:hover {
+                    background-color: #eee;
+                }
+
+                a {
+                    position: relative;
+                    display: block;
+                    padding: 10px 0 10px 130px;
+
+                    &:before {
+                        display: block;
+                        content: ' ';
+                        width: 34px;
+                        height: 34px;
+                        top: 0;
+                        right: 150px;
+                        position: absolute;
+                    }
+                }
+
+                &:first-of-type {
+                    a:before {
+                        background-image: url(../img/icon/attendance.svg);
+                    }
+                }
+
+                &:nth-of-type(2) {
+                    a:before {
+                        background-image: url(../img/icon/health.svg);
+                    }
+                }
+
+                &:nth-of-type(3) {
+                    a:before {
+                        background-image: url(../img/icon/bottle.svg);
+                    }
+                }
+
+                &:nth-of-type(4) {
+                    a:before {
+                        background-image: url(../img/icon/meals.svg);
+                    }
+                }
+
+                &:nth-of-type(5) {
+                    a:before {
+                        background-image: url(../img/icon/potty.svg);
+                    }
+                }
+
+                &:nth-of-type(6) {
+                    a:before {
+                        background-image: url(../img/icon/nap.svg);
+                    }
+                }
+
+                &:nth-of-type(7) {
+                    a:before {
+                        background-image: url(../img/icon/reward.svg);
+                    }
+                }
+
+                &:nth-of-type(8) {
+                    a:before {
+                        background-image: url(../img/icon/supplies.svg);
+                    }
+                }
+
+                &:nth-of-type(9) {
+                    a:before {
+                        background-image: url(../img/icon/ourday.svg);
+                        color: purple;
+                    }
+                }
+
+                &:last-of-type {
+                    a:before {
+                        background-image: url(../img/icon/myday.svg);
+                        color: blue;
+                    }
+                }
+            }
+        }
+    }
 }
-main {
-  border: 1px solid grey;
-}
-app-navbar{
-  border: 1px solid lightblue;
-  max-width:270px;
-}
->>>>>>> LVRUBYM-312: Fixed
