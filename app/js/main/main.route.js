@@ -1,14 +1,10 @@
 module.exports = angular
-  .module('school_area.main.route', [])
+  .module('schoolArea.main.route', [])
   .config(function($stateProvider, $urlRouterProvider) {
-    $urlRouterProvider.otherwise('/');
+    $urlRouterProvider.otherwise('/presence');
     $stateProvider.state('main',{
-      url: '/main',
       name: 'main',
       template: '<main-component></main-component>'
     })
-    .state('main.presence', {
-    url: '/presence',
-    template: '<presence-component></presence-component>'
-  });
+    ;
   });

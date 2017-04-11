@@ -1,6 +1,7 @@
-var presenceComponent = require('./components/presence.component.js');
-
+var presenceComponent = require('./components/presence.component.js'),
+    presenceRoute = require('./presence.route.js');
 module.exports = angular
-  .module('school_area.presence', [
-    presenceComponent.name
+  .module('schoolArea.main.presence', [
+    presenceComponent.name,
+    presenceRoute.name
   ]);
