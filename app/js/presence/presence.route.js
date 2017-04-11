@@ -3,7 +3,7 @@ module.exports = angular
   .config(function($stateProvider, $urlRouterProvider) {
     $stateProvider
     .state('main.presence', {
-    url: '/presence',
-    template: '<presence-component></presence-component>'
-  });
+      url: '/presence',
+      template: '<presence-component></presence-component>'
+    });
   });

@@ -10,10 +10,10 @@
     </md-select>
     <div class="icon-wrapper" layout="row" role="button">
       <a ui-sref="">
-        <md-icon id="today">today</md-icon>
+        <md-icon class="today">today</md-icon>
       </a>
       <a ui-sref="" ng-click="pastDate()" role="button">
-        <md-icon id="chevron_left">chevron_left</md-icon>
+        <md-icon id="chevron_left" class="chevron">chevron_left</md-icon>
       </a>
       <div class="data" layout="row" layout-align="space-around center">
         <span class="number">{{selectedDate.getDate() + 1}}</span>
@@ -23,7 +23,7 @@
         </div>
       </div>
       <a ui-sref="" ng-click="nextDate()" ng-click="showMonth()" role="button">
-        <md-icon id="chevron_right">chevron_right</md-icon>
+        <md-icon id="chevron_right" class="chevron">chevron_right</md-icon>
       </a>
     </div>
     <md-button class="user-button" layout="row" layout-align="center center">

@@ -1,241 +1,261 @@
-@import "./../../node_modules/angular-material/angular-material.css";
+@import './../../node_modules/angular-material/angular-material.css';
 
 body {
-    text-align: center;
+  text-align: center;
 }
 
 .header {
-    $font-size: 45px;
-    $cursor: pointer;
-    $color: #95c948;
+  $font-size: 45px;
+  $cursor: pointer;
+  $color: #95c948;
 
-    #toolbar {
-        background: white;
+  .logo {
+    width: 270px;
+
+    img {
+      height: 70px;
     }
+  }
 
-    #select {
-        border: 1px solid #d7d7d7;
-        border-radius: 10px;
-        background-color: white;
-        padding: 0px 10px;
-        font-size: 14px;
-        height: 38px;
+  md-toolbar {
+    background: white;
+  }
 
-        &:hover {
-            border: 1px solid #428bca;
-            box-shadow: 1px 2px 4px rgba(0, 0, 0, 0.5);
-        }
+  md-select {
+    background-color: white;
+    border: 1px solid #d7d7d7;
+    border-radius: 10px;
+    font-size: 14px;
+    height: 38px;
+    padding: 0 10px;
+
+    &:hover {
+      border: 1px solid #428bca;
+      box-shadow: 1px 2px 4px rgba(0, 0, 0, .5);
     }
+  }
 
-    #today {
-        font-size: $font-size;
-        color: $color;
-        margin: 0 10px;
-        cursor: $cursor;
-    }
+  .today {
+    color: $color;
+    cursor: $cursor;
+    font-size: $font-size;
+    margin: 0 10px;
 
-    #chevron_left, #chevron_right {
-        font-size: $font-size;
-        cursor: $cursor;
-    }
+  }
 
-    .avatar {
-        width: 50px;
-        min-width: 50px;
-        height: 50px;
-        margin: 0 8px 0 0;
-        border-radius: 50%;
-    }
+  .chevron {
+    cursor: $cursor;
+    font-size: $font-size;
+  }
 
-    .user-button {
-        margin: 0;
-        padding: 0 16px;
-        height: 64px;
-        text-transform: none;
-    }
+  .avatar {
+    border-radius: 50%;
+    height: 50px;
+    margin: 0 8px 0 0;
+    min-width: 50px;
+    width: 50px;
+  }
 
-    .username {
-        margin: 10px;
-    }
+  .user-button {
+    height: 64px;
+    margin: 0;
+    padding: 0 16px;
+    text-transform: none;
+  }
 
-    .number {
-        font-size: 30px;
-        color: $color;
-    }
+  .username {
+    margin: 10px;
+  }
 
-    .month {
-        font-size: 20px;
-        color: $color;
-    }
+  .number {
+    color: $color;
+    font-size: 30px;
+  }
 
-    .day {
-        color: #b1b1b1;
-    }
+  .month {
+    color: $color;
+    font-size: 20px;
+  }
 
-    .data {
-        margin: 0 10px 0 30px;
-        width: 100px;
-    }
+  .day {
+    color: #b1b1b1;
+  }
 
-    .date {
-        margin-left: 15px;
-    }
-}
+  .data {
+    margin: 0 10px 0 30px;
+    width: 100px;
+  }
 
-.header {
-    .logo {
-        width: 270px;
-
-        img {
-            height: 70px;
-        }
-    }
+  .date {
+    margin-left: 15px;
+  }
 }
 
 nav {
-    max-width: 270px;
-    border: 1px solid #ebebeb;
+  border: 1px solid #ebebeb;
+  max-width: 270px;
 
-    a {
-        font-size: 17px;
-        font-weight: 400;
+  a {
+    color: #9c9d9d;
+    font-size: 17px;
+    font-weight: 400;
+    text-decoration: none;
+  }
+
+  ul {
+    list-style-type: none;
+    padding-left: 0;
+
+    .journal {
+      background-color: #92c948;
+      cursor: pointer;
+      margin-bottom: 15px;
+      padding: 3px 0;
+      text-align: left;
+      width: 100%;
+
+      a {
+        color: #fff;
+        display: block;
+        padding: 15px 0 15px 90px;
+        position: relative;
         text-decoration: none;
-        color: #9c9d9d;
+
+        &::before {
+          background-image: url('../img/icon/journal.svg');
+          color: white;
+          content: ' ';
+          display: block;
+          height: 40px;
+          left: 35px;
+          position: absolute;
+          top: 5px;
+        }
+      }
     }
 
     ul {
-        list-style-type: none;
-        padding-left: 0;
+      .active {
+        border-left: 5px solid #92c948;
+        max-width: 263px;
 
-        .journal {
-            background-color: #92c948;
-            padding: 3px 0 3px 0;
-            width: 100%;
-            text-align: left;
-            cursor: pointer;
-            margin-bottom: 15px;
+        a {
+          color: #92c948;
+          display: block;
+          padding: 10px 0 10px 125px;
+          position: relative;
+        }
+      }
 
-            a {
-                text-decoration: none;
-                color: #ffffff;
-                position: relative;
-                display: block;
-                padding: 15px 0 15px 90px;
+      li {
+        padding-top: 5px;
+        position: relative;
+        width: 100%;
 
-                &:before {
-                    display: block;
-                    content: ' ';
-                    background-image: url(../img/icon/journal.svg);
-                    width: 40px;
-                    height: 40px;
-                    top: 5px;
-                    left: 35px;
-                    position: absolute;
-                    color: white;
-                }
-            }
+        &:hover {
+          background-color: #eee;
         }
 
-        ul {
-            .active {
-                border-left: 5px solid #92c948;
-                max-width: 263px;
+        a {
+          display: block;
+          padding: 10px 0 10px 130px;
+          position: relative;
 
-                a {
-                    color: #92c948;
-                    position: relative;
-                    display: block;
-                    padding: 10px 0 10px 125px;
-                }
-            }
+          &::before {
+            content: ' ';
+            display: block;
 
-            li {
-                width: 100%;
-                position: relative;
-                padding-top: 5px;
 
-                &:hover {
-                    background-color: #eee;
-                }
-
-                a {
-                    position: relative;
-                    display: block;
-                    padding: 10px 0 10px 130px;
-
-                    &:before {
-                        display: block;
-                        content: ' ';
-                        width: 34px;
-                        height: 34px;
-                        top: 0;
-                        right: 150px;
-                        position: absolute;
-                    }
-                }
-
-                &:first-of-type {
-                    a:before {
-                        background-image: url(../img/icon/attendance.svg);
-                    }
-                }
-
-                &:nth-of-type(2) {
-                    a:before {
-                        background-image: url(../img/icon/health.svg);
-                    }
-                }
-
-                &:nth-of-type(3) {
-                    a:before {
-                        background-image: url(../img/icon/bottle.svg);
-                    }
-                }
-
-                &:nth-of-type(4) {
-                    a:before {
-                        background-image: url(../img/icon/meals.svg);
-                    }
-                }
-
-                &:nth-of-type(5) {
-                    a:before {
-                        background-image: url(../img/icon/potty.svg);
-                    }
-                }
-
-                &:nth-of-type(6) {
-                    a:before {
-                        background-image: url(../img/icon/nap.svg);
-                    }
-                }
-
-                &:nth-of-type(7) {
-                    a:before {
-                        background-image: url(../img/icon/reward.svg);
-                    }
-                }
-
-                &:nth-of-type(8) {
-                    a:before {
-                        background-image: url(../img/icon/supplies.svg);
-                    }
-                }
-
-                &:nth-of-type(9) {
-                    a:before {
-                        background-image: url(../img/icon/ourday.svg);
-                        color: purple;
-                    }
-                }
-
-                &:last-of-type {
-                    a:before {
-                        background-image: url(../img/icon/myday.svg);
-                        color: blue;
-                    }
-                }
-            }
+            height: 34px;
+            position: absolute;
+            right: 150px;
+            top: 0;
+            width: 34px;
+          }
         }
+
+        &:first-of-type {
+          a {
+            &::before {
+              background-image: url('../img/icon/attendance.svg');
+            }
+          }
+        }
+
+        &:nth-of-type(2) {
+          a {
+            &::before {
+              background-image: url('../img/icon/health.svg');
+            }
+          }
+        }
+
+        &:nth-of-type(3) {
+          a {
+            &::before {
+              background-image: url('../img/icon/bottle.svg');
+            }
+          }
+        }
+
+        &:nth-of-type(4) {
+          a {
+            &::before {
+              background-image: url('../img/icon/meals.svg');
+            }
+          }
+        }
+
+        &:nth-of-type(5) {
+          a {
+            &::before {
+              background-image: url('../img/icon/potty.svg');
+            }
+          }
+        }
+
+        &:nth-of-type(6) {
+          a {
+            &::before {
+              background-image: url('../img/icon/nap.svg');
+            }
+          }
+        }
+
+        &:nth-of-type(7) {
+          a {
+            &::before {
+              background-image: url('../img/icon/reward.svg');
+            }
+          }
+        }
+
+        &:nth-of-type(8) {
+          a {
+            &::before {
+              background-image: url('../img/icon/supplies.svg');
+            }
+          }
+        }
+
+        &:nth-of-type(9) {
+          a {
+            &::before {
+              background-image: url('../img/icon/ourday.svg');
+              color: purple;
+            }
+          }
+        }
+
+        &:last-of-type {
+          a {
+            &::before {
+              background-image: url('../img/icon/myday.svg');
+              color: blue;
+            }
+          }
+        }
+      }
     }
+  }
 }
