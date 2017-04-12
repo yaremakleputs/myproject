@@ -1,0 +1,27 @@
+<div class='md-padding' layout='row' layout-align='center center'>
+  <md-card flex='20' layout='column' layout-align='center center'>
+    <md-card-title>
+      <md-card-title-text>
+        <span class='md-headline'>Sign in</span>
+      </md-card-title-text>
+    </md-card-title>
+
+    <form novalidate ng-submit='$ctrl.login()' layout='column'>
+      <md-card-content layout='column'>
+        <md-input-container>
+          <label>Email</label>
+          <input name='user[email]' ng-model='$ctrl.user.email' type='email'>
+        </md-input-container>
+
+        <md-input-container>
+          <label>Password</label>
+          <input name='user[password]' ng-model='$ctrl.user.password' type='password'>
+        </md-input-container>
+      </md-card-content>
+
+      <md-card-actions>
+        <md-button class='md-raised' type='submit'>Log in</md-button>
+      </md-card-actions>
+    </form>
+  </md-card>
+</div>
