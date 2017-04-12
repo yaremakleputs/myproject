@@ -6,7 +6,8 @@ var studentModule = require('./../student/student.module.js');
 var groupService = require('./../common/services/group.service.js');
 var staticModule = require('./../static/static.module.js');
 var toggleMessage = require('./../common/services/toggleMessage/toggleMessage.service.js');
-
+var bottleReportModule = require('.././bottle_report/bottle_report.module.js');
+	  
 require('../../css/style.scss');
 
 module.exports = angular
@@ -18,7 +19,8 @@ module.exports = angular
     studentModule.name,
     groupService.name,
     staticModule.name,
-    toggleMessage.name
+    toggleMessage.name,
+    bottleReportModule.name
   ])
   .config(['$mdThemingProvider',
     function($mdThemingProvider) {
