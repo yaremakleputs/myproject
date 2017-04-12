@@ -12,4 +12,24 @@ angular
   .config(function($locationProvider, localStorageServiceProvider) {
     $locationProvider.html5Mode(true);
     localStorageServiceProvider.setPrefix('schoolArea');
-  });
+  })
+  .run(['$rootScope', '$state', 'auth',
+    function($rootScope, $state, auth) {
+      $rootScope.$on('$stateChangeStart',
+        function(event, toState, toParams, fromState) {
+          if (toState.name === 'login' && auth.authenticated) {
+            event.preventDefault();
+          }
+
+          if (toState.name !== 'login') {
+            auth.toState = toState.name;
+
+            if (!auth.authenticated) {
+              event.preventDefault();
+              $state.transitionTo('login');
+            } else {
+              auth.refreshToken();
+            }
+          }
+        });
+    }]);
