@@ -7,6 +7,7 @@ angular
     vendorModule.name,
     mainModule.name
   ])
-  .config(function($locationProvider) {
+  .config(function($locationProvider, localStorageServiceProvider) {
     $locationProvider.html5Mode(true);
+    localStorageServiceProvider.setPrefix('schoolArea');
   });
