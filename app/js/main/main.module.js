@@ -12,7 +12,7 @@ var bottleReportModule = require('.././bottleReport/bottleReport.module.js');
 var sideBarModule = require('./../sidebar/sidebar.module.js');
 var studentService = require('./../common/services/student.service.js');
 var profileModule = require('./../profile/profile.module.js');
-var toggleMessage = require('./../common/services/toggleMessage/toggleMessage.service.js');
+var healthReportModule = require('./../healthReport/healthReport.module.js');
 
 require('../../css/style.scss');
 
@@ -26,12 +26,12 @@ module.exports = angular
     bottleReportModule.name,
     groupService.name,
     toggleMessage.name,
-    staticModule.name,
     sideBarModule.name,
     studentService.name,
     profileModule.name,
     forgotPasswordModule.name,
-    resetPasswordModule.name
+    resetPasswordModule.name,
+    healthReportModule.name
   ])
 
   .config(['$translateProvider', function($translateProvider) {
