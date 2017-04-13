@@ -4,6 +4,7 @@ module.exports = angular
     $stateProvider.state({
       url: '/login',
       name: 'login',
-      template: '<login-component></login-component>'
+      template: '<login-component></login-component>',
+      skipAuth: true
     });
   });
