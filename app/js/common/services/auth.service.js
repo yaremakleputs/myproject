@@ -33,7 +33,7 @@ function AuthFactory($state, localStorageService, constants, authResource) {
           $state.go(constants.LOGIN_STATE);
         }
       }
-      if (toState.name === constants.LOGIN_STATE && authenticated) {
+      if (toState.skipAuth && authenticated) {
         event.preventDefault();
         $state.go(fromState);
       }
