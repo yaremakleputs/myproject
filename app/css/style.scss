@@ -1,7 +1,17 @@
 @import './../../node_modules/angular-material/angular-material.css';
 
+//  Variables  //
+
+$skin-color: #8BC34A;
+
+//  General  //
+
 body {
   text-align: center;
+}
+
+html, body, main {
+  height: 100%;
 }
 
 .header {
@@ -257,5 +267,16 @@ nav {
         }
       }
     }
+  }
+}
+
+login-component {
+  display: block;
+  height: 100%;
+  background-color: $skin-color;
+  background-image: url('../img/misc/pattern.png');
+
+  #login-form {
+    margin-top: 15vh;
   }
 }
