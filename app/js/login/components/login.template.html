@@ -6,16 +6,16 @@
       </md-card-title-text>
     </md-card-title>
 
-    <form novalidate ng-submit='$ctrl.login()' layout='column'>
+    <form novalidate ng-submit='$ctrl.login(user)' layout='column'>
       <md-card-content layout='column'>
         <md-input-container>
           <label>Email</label>
-          <input name='user[email]' ng-model='$ctrl.user.email' type='email'>
+          <input name='user[email]' ng-model='user.email' type='email'>
         </md-input-container>
 
         <md-input-container>
           <label>Password</label>
-          <input name='user[password]' ng-model='$ctrl.user.password' type='password'>
+          <input name='user[password]' ng-model='user.password' type='password'>
         </md-input-container>
       </md-card-content>
 

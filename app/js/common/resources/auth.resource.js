@@ -2,10 +2,10 @@ module.exports = angular
   .module('auth.resource', [])
   .factory('authResource', AuthResource);
 
-AuthResource.$inject = ['$resource', 'constants'];
+AuthResource.$inject = ['$resource', 'globalSettings'];
 
-function AuthResource($resource, constants) {
-  var resource = $resource(constants.SERVER_URL + '/:action', {},
+function AuthResource($resource, globalSettings) {
+  var resource = $resource(globalSettings.SERVER_URL + '/:action', {},
     {
       'authenticate': {
         params: {action: 'signin'},

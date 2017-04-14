@@ -17,6 +17,14 @@ angular
       localStorageServiceProvider.setPrefix('schoolArea');
       $httpProvider.interceptors.push('tokenInjector');
     })
+  .config(function($mdThemingProvider) {
+    $mdThemingProvider
+      .theme('default')
+      .primaryPalette('light-green')
+      .accentPalette('deep-purple')
+      .warnPalette('red')
+      .backgroundPalette('grey');
+  })
   .run(['$rootScope', '$state', 'auth',
     function($rootScope, $state, auth) {
       $rootScope.$on('$stateChangeStart',

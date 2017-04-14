@@ -9,33 +9,33 @@ module.exports = angular
 AuthFactory.$inject = [
   '$state',
   'localStorageService',
-  'constants',
+  'globalSettings',
   'authResource'
 ];
 
-function AuthFactory($state, localStorageService, constants, authResource) {
+function AuthFactory($state, localStorageService, globalSettings, authResource) {
   var toState;
   var fromState;
-  var savedState = constants.MAIN_STATE;
+  var savedState = globalSettings.MAIN_STATE;
   var authenticated = localStorageService.get('token') ? true : false;
 
   var service = {
     authorization: function(event, to, from) {
-      toState = to.name ? to : constants.MAIN_STATE;
-      fromState = from.name ? from : constants.MAIN_STATE;
-
-      if (!toState.skipAuth) {
+      toState = to.name ? to : globalSettings.MAIN_STATE;
+      fromState = from.name ? from : globalSettings.MAIN_STATE;
+      if (toState.skipAuth) {
+        if (authenticated) {
+          event.preventDefault();
+          $state.go(fromState);
+        }
+      } else {
         if (authenticated) {
           savedState = toState;
           service.refreshToken();
         } else {
           event.preventDefault();
-          $state.go(constants.LOGIN_STATE);
+          $state.go(globalSettings.LOGIN_STATE);
         }
-      }
-      if (toState.skipAuth && authenticated) {
-        event.preventDefault();
-        $state.go(fromState);
       }
     },
 
@@ -52,8 +52,8 @@ function AuthFactory($state, localStorageService, constants, authResource) {
     },
 
     logout: function() {
+      savedState = globalSettings.MAIN_STATE;
       service.removeToken();
-      $state.go(constants.LOGIN_STATE);
     },
 
     saveToken: function(response) {
@@ -63,8 +63,8 @@ function AuthFactory($state, localStorageService, constants, authResource) {
 
     removeToken: function() {
       authenticated = false;
-      savedState = constants.MAIN_STATE;
       localStorageService.remove('token');
+      $state.go(globalSettings.LOGIN_STATE);
     }
   };
 
