@@ -11,4 +11,12 @@ module.exports = angular
     mainRoute.name,
     loginModule.name,
     presenceReportModule.name
-  ]);
+  ])
+  .config(function($mdThemingProvider) {
+    $mdThemingProvider
+      .theme('default')
+      .primaryPalette('light-green')
+      .accentPalette('deep-purple')
+      .warnPalette('red')
+      .backgroundPalette('grey');
+  });
