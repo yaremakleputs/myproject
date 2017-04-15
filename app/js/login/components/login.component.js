@@ -10,7 +10,9 @@ LoginController.$inject = ['auth'];
 function LoginController(auth) {
   var ctrl = this;
 
-  ctrl.login = function(user) {
-    auth.authenticate({user: user});
+  ctrl.login = function(user, valid) {
+    if (valid) {
+      auth.authenticate({user: user});
+    }
   };
 }
