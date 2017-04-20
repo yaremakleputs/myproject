@@ -3,11 +3,13 @@ var mainModule = require('./main/main.module.js');
 var constantsModule = require('./common/constants.js');
 var tokenInjector = require('./common/services/tokenInjector.service.js');
 var vendorModule = require('./requirements.js');
+var valuesModule = require('./common/values.js');
 
 angular
   .module('schoolArea', [
     vendorModule.name,
     constantsModule.name,
+    valuesModule.name,
     mainModule.name,
     tokenInjector.name
   ])
