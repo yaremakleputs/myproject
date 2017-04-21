@@ -13,7 +13,6 @@
     ],
     "requireOperatorBeforeLineBreak": true,
     "requireCamelCaseOrUpperCaseIdentifiers": {
-        "allowedPrefixes": ["opt_"],
         "allExcept": ["var_args", {regex:{pattern:"^ignore",flags:"i"}}]
     },
     "maximumLineLength": {
