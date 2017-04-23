@@ -13,6 +13,7 @@
     "angular-mocks": "^1.6.4",
     "css-loader": "^0.28.0",
     "file-loader": "^0.11.1",
+    "angular-mocks": "^1.6.4",
     "jasmine-core": "^2.5.2",
     "karma": "^1.6.0",
     "karma-angular": "0.0.6",
