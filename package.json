@@ -10,6 +10,7 @@
     "test": "karma start ./karma.conf.js --single-run"
   },
   "devDependencies": {
+    "angular-mocks": "^1.6.4",
     "css-loader": "^0.27.3",
     "file-loader": "^0.10.1",
     "jasmine-core": "^2.5.2",

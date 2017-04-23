@@ -6,7 +6,8 @@ module.exports = function(config) {
     basePath: 'app/js/',
     frameworks: ['angular', 'jasmine'],
     files: [
-      './specs.webpack.js'
+      './specs.webpack.js',
+      './../../node_modules/angular-mocks/angular-mocks.js'
     ],
     exclude: [
     ],
@@ -20,6 +21,7 @@ module.exports = function(config) {
     autoWatch: true,
     browsers: ['PhantomJS'],
     singleRun: true,
-    concurrency: Infinity
+    concurrency: Infinity,
+    failOnEmptyTestSuite : false
   })
 }
