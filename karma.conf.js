@@ -1,6 +1,3 @@
-// Karma configuration
-// Generated on Thu Apr 20 2017 22:09:07 GMT+0300 (EEST)
-
 module.exports = function(config) {
   config.set({
     basePath: 'app/js/',
@@ -23,5 +20,5 @@ module.exports = function(config) {
     singleRun: true,
     concurrency: Infinity,
     failOnEmptyTestSuite : false
-  })
-}
+  });
+};
