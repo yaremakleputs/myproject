@@ -12,3 +12,4 @@ script:
   - jscs ./
   - sass-lint 'app/**/*.scss' -v -q
   - sass-lint 'app/**/*.css' -v -q
+  - npm test

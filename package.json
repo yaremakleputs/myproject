@@ -6,12 +6,23 @@
   "scripts": {
     "server": "webpack-dev-server --history-api-fallback --watch-content-base --hot --progress --port 1111",
     "start": "npm run server",
-    "run": "webpack -p"
+    "run": "webpack -p",
+    "test": "karma start ./karma.conf.js --single-run"
   },
   "devDependencies": {
+    "angular-mocks": "^1.6.4",
     "css-loader": "^0.27.3",
     "file-loader": "^0.10.1",
+    "jasmine-core": "^2.5.2",
+    "karma": "^1.6.0",
+    "karma-angular": "0.0.6",
+    "karma-coverage": "^1.1.1",
+    "karma-jasmine": "^1.1.0",
+    "karma-phantomjs-launcher": "^1.0.4",
+    "karma-webpack": "^2.0.3",
     "node-sass": "^4.5.0",
+    "phantomjs": "^2.1.7",
+    "phantomjs-prebuilt": "^2.1.14",
     "sass-lint": "^1.10.2",
     "sass-loader": "^6.0.3",
     "style-loader": "^0.14.1",
