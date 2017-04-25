@@ -6,9 +6,9 @@ module.exports = angular
   ])
   .factory('groupService', groupService);
 
-groupService.$inject = ['groupResource'];
+groupService.$inject = ['groupResource', 'currentGroupDay'];
 
-function groupService(groupResource) {
+function groupService(groupResource, currentGroupDay) {
   var service = {
     getGroups: getGroups
   };
@@ -16,7 +16,8 @@ function groupService(groupResource) {
 
   function getGroups() {
     return groupResource.query().$promise.then(function(data) {
-        return data;
-      });
+      currentGroupDay.group_id = data[0].id;
+      return data;
+    });
   };
 }
