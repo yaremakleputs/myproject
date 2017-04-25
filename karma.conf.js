@@ -18,6 +18,6 @@ module.exports = function(config) {
     autoWatch: true,
     browsers: ['PhantomJS'],
     concurrency: Infinity,
-    failOnEmptyTestSuite : false
+    failOnEmptyTestSuite: false
   });
 };
