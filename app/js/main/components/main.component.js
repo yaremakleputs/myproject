@@ -6,16 +6,31 @@ module.exports = angular
   ])
   .component('mainComponent', {
     templateUrl: './app/js/main/components/main.template.html',
-    controller: MainController
+    controller: MainController,
+    bindings: {
+      groups: '<'
+    }
   });
 
-MainController.$inject = ['auth'];
+MainController.$inject = [
+  '$scope',
+  '$state',
+  'auth',
+  'currentGroupDay'
+];
 
-function MainController(auth) {
+function MainController($scope, $state, auth, currentGroupDay) {
   var ctrl = this;
+
+  ctrl.currentGroupDay = currentGroupDay;
 
   ctrl.logout = function() {
     auth.logout();
   };
+
+  $scope.$watch(
+    function() { return currentGroupDay.group_id; },
+    function() { $state.reload($state.current); }
+  );
 };
 

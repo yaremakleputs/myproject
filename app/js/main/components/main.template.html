@@ -6,7 +6,11 @@
 
     <div flex layout="row" layout-align="space-around center">
 
-      <group-list></group-list>
+      <md-select ng-model="$ctrl.currentGroupDay.group_id" >
+        <md-option ng-value="group.id" ng-repeat="group in $ctrl.groups">
+          {{ group.name }}
+        </md-option>
+      </md-select>
 
       <div class="icon-wrapper" layout="row" role="button">
         <a ui-sref="#"><md-icon class="today">today</md-icon></a>
@@ -52,7 +56,7 @@
       <li>
         <ul>
           <li class="active"><a ui-sref="main.presenceReport">Attendance</a></li>
-          <li><a ui-sref="main.test">Health</a></li>
+          <li><a ui-sref="#">Health</a></li>
           <li><a ui-sref="#">Bottle</a></li>
           <li><a ui-sref="#">Meals</a></li>
           <li><a ui-sref="#">Potty</a></li>

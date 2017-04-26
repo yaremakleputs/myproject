@@ -2,8 +2,9 @@ var mainComponent = require('./components/main.component.js');
 var mainRoute = require('./main.route.js');
 var loginModule = require('./../login/login.module.js');
 var presenceReportModule = require('./../presenceReport/presenceReport.module.js');
-var groupListModule = require('./../groupList/groupList.module.js');
 var studentModule = require('./../student/student.module.js');
+var groupService = require('./../common/services/group.service.js');
+
 require('../../css/style.scss');
 
 module.exports = angular
@@ -12,8 +13,8 @@ module.exports = angular
     mainRoute.name,
     loginModule.name,
     presenceReportModule.name,
-    groupListModule.name,
-    studentModule.name
+    studentModule.name,
+    groupService.name
   ])
   .config(function($mdThemingProvider) {
     $mdThemingProvider
