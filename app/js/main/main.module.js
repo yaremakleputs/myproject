@@ -33,12 +33,19 @@ module.exports = angular
     forgotPasswordModule.name,
     resetPasswordModule.name
   ])
-  .config(['$mdThemingProvider',
-    function($mdThemingProvider) {
-      $mdThemingProvider
-        .theme('default')
-        .primaryPalette('light-green')
-        .accentPalette('deep-purple')
-        .warnPalette('red')
-        .backgroundPalette('grey');
-    }]);
+
+  .config(['$translateProvider', function($translateProvider) {
+    $translateProvider.useStaticFilesLoader({
+      prefix: 'app/js/i18n/locale-',
+      suffix: '.json'
+    });
+    $translateProvider.preferredLanguage('en');
+  }])
+  .config(function($mdThemingProvider) {
+    $mdThemingProvider
+      .theme('default')
+      .primaryPalette('light-green')
+      .accentPalette('deep-purple')
+      .warnPalette('red')
+      .backgroundPalette('grey');
+  });
