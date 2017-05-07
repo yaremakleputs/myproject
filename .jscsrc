@@ -1,11 +1,10 @@
 {
-    "preset": "google",
-    "fileExtensions": [".js", "jscs"],
-     "excludeFiles": [
+    "excludeFiles": [
        "app/js/coverage/**",
        "node_modules/**"
     ],
-
+    "preset": "google",
+    "fileExtensions": [".js", "jscs"],
     "requireCurlyBraces": [
         "if",
         "else",
@@ -97,4 +96,5 @@
         "checkRedundantAccess": true,
         "requireNewlineAfterDescription": true
     }
+
 }

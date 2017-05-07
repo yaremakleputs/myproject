@@ -48,7 +48,7 @@
 
       <md-button class="user-button" layout="row" layout-align="center center">
         <img md-menu-align-target class="avatar" src="app/img/profile/educator.svg" alt="profile">
-        <span class="username">Teacher</span>
+        <span class="username">{{$ctrl.currentUserValues.first_name + " " + $ctrl.currentUserValues.last_name}}</span>
         <md-menu md-position-mode="target-right bottom">
           <md-icon ng-click="$mdOpenMenu()">expand_more</md-icon>
           <md-menu-content width="3">

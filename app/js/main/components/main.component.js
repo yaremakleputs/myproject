@@ -16,13 +16,15 @@ MainController.$inject = [
   '$scope',
   '$state',
   'auth',
-  'currentGroupDay'
+  'currentGroupDay',
+  'currentUserValues'
 ];
 
-function MainController($scope, $state, auth, currentGroupDay) {
+function MainController($scope, $state, auth, currentGroupDay, currentUserValues) {
   var ctrl = this;
 
   ctrl.currentGroupDay = currentGroupDay;
+  ctrl.currentUserValues = currentUserValues;
   ctrl.logout = function() {
     auth.logout();
     localStorage.removeItem('activeMenu');
