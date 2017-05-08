@@ -4,5 +4,6 @@ module.exports = angular
     require('angular-resource'),
     require('angular-messages'),
     require('angular-local-storage'),
-    require('angular-material')
-    ]);
+    require('angular-material'),
+    require('angular-base64-upload')
+  ]);
