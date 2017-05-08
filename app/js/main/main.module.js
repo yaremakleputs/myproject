@@ -5,8 +5,14 @@ var presenceReportModule = require('./../presenceReport/presenceReport.module.js
 var studentModule = require('./../student/student.module.js');
 var groupService = require('./../common/services/group.service.js');
 var staticModule = require('./../static/static.module.js');
+<<<<<<< HEAD
 var toggleMessage = require('./../common/services/toggleMessage/toggleMessage.service.js');
+<<<<<<< HEAD
 var bottleReportModule = require('.././bottleReport/bottleReport.module.js');
+=======
+=======
+>>>>>>> LVRUBYM-344: Create main template style
+>>>>>>> LVRUBYM-344: Create main template style
 
 require('../../css/style.scss');
 
@@ -19,8 +25,12 @@ module.exports = angular
     studentModule.name,
     bottleReportModule.name,
     groupService.name,
+<<<<<<< HEAD
     staticModule.name,
     toggleMessage.name
+=======
+    staticModule.name
+>>>>>>> LVRUBYM-344: Create main template style
   ])
   .config(['$mdThemingProvider',
     function($mdThemingProvider) {
