@@ -9,25 +9,6 @@
         </md-option>
       </md-select>
 
-    <div class="calendar" layout="row" layout-align="center start">
-      <a ui-sref="" class="calendar-img">
-        <img src="app/img/icons/callendar.png" alt="callendar">
-      </a>
-      <a ui-sref="" ng-click="$ctrl.pastDate()">
-         <img src="app/img/icons/arrow_left.png" alt="arrow">
-      </a>
-
-      <span class="number">{{$ctrl.selectedDate.getDate()}}</span>
-
-      <div class="date" layout="column">
-            <span class="month">{{$ctrl.monthNames[$ctrl.selectedDate.getMonth()] }}</span>
-            <span class="day">{{$ctrl.dayNames[$ctrl.selectedDate.getDay()] }}</span>
-      </div>
-
-      <a ui-sref="" ng-click="$ctrl.nextDate()">
-        <img src="app/img/icons/arrow_right.png" alt="arrow">
-      </a>
-    </div>
     <md-button class="user-button" layout="row" layout-align="center center">
 
 <<<<<<< HEAD
