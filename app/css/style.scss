@@ -546,7 +546,7 @@ main {
     .avatar {
       border-radius: 50%;
       height: 70px;
-      margin: 15px 20px 15px 100px;
+      margin: 15px 30px 15px 30px;
       min-width: 70px;
       width: 70px;
     }
@@ -1569,4 +1569,8 @@ md-toast {
     font-weight: 300;
     margin: 0;
   }
+}
+
+.my-day .student-info {
+  width: 30%
 }
