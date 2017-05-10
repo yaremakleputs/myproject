@@ -17,14 +17,17 @@ MainController.$inject = [
   '$state',
   'auth',
   'currentGroupDay',
-  'currentUserValues'
+  'currentUser'
 ];
 
-function MainController($scope, $state, auth, currentGroupDay, currentUserValues) {
+function MainController($scope, $state, auth, currentGroupDay, currentUser) {
   var ctrl = this;
 
   ctrl.currentGroupDay = currentGroupDay;
   ctrl.currentUserValues = currentUserValues;
+  ctrl.currentUser = currentUser;
+  ctrl.fullname = ctrl.currentUser.first_name + ' ' + ctrl.currentUser.last_name;
+
   ctrl.logout = function() {
     auth.logout();
     localStorage.removeItem('activeMenu');
