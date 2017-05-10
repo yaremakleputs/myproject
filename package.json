@@ -6,17 +6,8 @@
   "scripts": {
     "server": "webpack-dev-server --history-api-fallback --watch-content-base --hot --progress --port 1111",
     "start": "npm run server",
-<<<<<<< acf678274a9a62303382f6915a6d576b53974395
     "deploy": "NODE_ENV=production webpack -p && NODE_ENV=production node server",
     "test": "karma start ./karma.conf.js --single-run"
-=======
-    "run": "webpack -p",
-<<<<<<< 82e7a24a16b4d39d77711d0ba7ba4e1b612e4489
-    "test": "karma start ./karma.conf.js"
->>>>>>> LVRUBYM-221:Added tests for service
-=======
-    "test": "karma start ./karma.conf.js --single-run"
->>>>>>> LVRUBYM-221:Changed package.json
   },
   "devDependencies": {
     "angular-mocks": "^1.6.4",
@@ -48,14 +39,9 @@
     "angular-local-storage": "^0.5.2",
     "angular-material": "^1.1.3",
     "angular-messages": "^1.6.4",
-    "angular-moment": "^1.0.1",
     "angular-resource": "^1.6.4",
     "angular-ui-router": "^0.3.2",
-<<<<<<< cce292a29e5ad8d9b9a6c221854bd206445884c4
     "express": "^4.15.2",
-=======
-    "moment": "^2.18.1",
->>>>>>> LVRUBYM-221:Added success and error function; fixed tests; changed css style and template
     "scsslint": "0.0.3"
   }
 }
