@@ -6,7 +6,7 @@
   "scripts": {
     "server": "webpack-dev-server --history-api-fallback --watch-content-base --hot --progress --port 1111",
     "start": "npm run server",
-    "run": "webpack -p",
+    "deploy": "NODE_ENV=production webpack -p && NODE_ENV=production node server",
     "test": "karma start ./karma.conf.js --single-run"
   },
   "devDependencies": {
@@ -34,7 +34,6 @@
   "license": "ISC",
   "dependencies": {
     "angular": "^1.6.0",
-    "angular-resource": "^1.6.4",
     "angular-animate": "^1.6.4",
     "angular-aria": "^1.6.4",
     "angular-local-storage": "^0.5.2",
@@ -42,6 +41,7 @@
     "angular-messages": "^1.6.4",
     "angular-resource": "^1.6.4",
     "angular-ui-router": "^0.3.2",
+    "express": "^4.15.2",
     "scsslint": "0.0.3"
   }
 }
