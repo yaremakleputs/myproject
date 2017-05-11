@@ -17,16 +17,18 @@ MainController.$inject = [
   '$state',
   'auth',
   'currentGroupDay',
-  'currentUser'
+  'currentUser',
+  'globalSettings'
 ];
 
-function MainController($scope, $state, auth, currentGroupDay, currentUser) {
+function MainController($scope, $state, auth, currentGroupDay, currentUser, globalSettings) {
   var ctrl = this;
 
   ctrl.currentGroupDay = currentGroupDay;
   ctrl.currentUserValues = currentUserValues;
   ctrl.currentUser = currentUser;
   ctrl.fullname = ctrl.currentUser.first_name + ' ' + ctrl.currentUser.last_name;
+  ctrl.avatar = ctrl.currentUser.url || globalSettings.STUDENT_IMG;
 
   ctrl.logout = function() {
     auth.logout();

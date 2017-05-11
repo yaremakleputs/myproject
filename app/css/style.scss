@@ -1065,6 +1065,13 @@ md-toast {
       width: 75px;
     }
   }
+
+  .teacher {
+    .avatar {
+      height: 170px;
+      width: 170px;
+    }
+  }
 }
 
 .upload-photo {
@@ -1104,6 +1111,22 @@ md-toast {
 
 
 // Bottle eport styles fix //
+
+.report-teacher {
+  background: none;
+  border: none;
+
+  .upload-photo-teacher {
+    height: 170px;
+    width: 170px;
+
+    label {
+      padding-top: 45%;
+    }
+  }
+}
+
+// Bottle report styles fix //
 
 .report,
 .container {
@@ -1184,5 +1207,3 @@ side-bar {
     width: 50%;
   }
 }
-
-
