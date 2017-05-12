@@ -6,22 +6,8 @@ var studentModule = require('./../student/student.module.js');
 var groupService = require('./../common/services/group.service.js');
 var staticModule = require('./../static/static.module.js');
 var toggleMessage = require('./../common/services/toggleMessage/toggleMessage.service.js');
-<<<<<<< HEAD
-<<<<<<< HEAD
 var bottleReportModule = require('.././bottleReport/bottleReport.module.js');
-=======
-=======
->>>>>>> LVRUBYM-344: Create main template style
-<<<<<<< HEAD
->>>>>>> LVRUBYM-344: Create main template style
-=======
-=======
 var sideBarModule = require('./../sidebar/sidebar.module.js');
->>>>>>> LVRUBYM-349:Create sidebar component
->>>>>>> LVRUBYM-349:Create sidebar component
-=======
-var sideBarModule = require('./../sidebar/sidebar.module.js');
->>>>>>> LVRUBYM-349:Fixed jscs
 
 require('../../css/style.scss');
 
