@@ -23,9 +23,10 @@ function MainController($scope, $state, auth, currentGroupDay) {
   var ctrl = this;
 
   ctrl.currentGroupDay = currentGroupDay;
-
   ctrl.logout = function() {
     auth.logout();
+    localStorage.removeItem('activeMenu');
+    localStorage.removeItem('activeSubmenu');
   };
 
   $scope.$watch(
