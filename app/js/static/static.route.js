@@ -8,4 +8,3 @@ module.exports = angular
         templateUrl: './app/js/static/components/static.template.html'
       });
     }]);
-

@@ -1,6 +1,10 @@
 {
     "preset": "google",
     "fileExtensions": [".js", "jscs"],
+     "excludeFiles": [
+       "app/js/coverage/**",
+       "node_modules/**"
+    ],
 
     "requireCurlyBraces": [
         "if",
@@ -13,7 +17,7 @@
     ],
     "requireOperatorBeforeLineBreak": true,
     "requireCamelCaseOrUpperCaseIdentifiers": {
-        "allExcept": ["var_args", {regex:{pattern:"^ignore",flags:"i"}}]
+       "allExcept": ["var_args", {regex:{pattern:"^ignore",flags:"i"}}]
     },
     "maximumLineLength": {
       "value": 100,

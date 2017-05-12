@@ -6,6 +6,7 @@ var studentModule = require('./../student/student.module.js');
 var groupService = require('./../common/services/group.service.js');
 var staticModule = require('./../static/static.module.js');
 var toggleMessage = require('./../common/services/toggleMessage/toggleMessage.service.js');
+var bottleReportModule = require('.././bottleReport/bottleReport.module.js');
 
 require('../../css/style.scss');
 
@@ -16,6 +17,7 @@ module.exports = angular
     loginModule.name,
     presenceReportModule.name,
     studentModule.name,
+    bottleReportModule.name,
     groupService.name,
     staticModule.name,
     toggleMessage.name

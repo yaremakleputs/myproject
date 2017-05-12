@@ -6,7 +6,6 @@ module.exports = {
     publicPath: 'dist/',
     filename: 'bundle.js'
   },
-
   module: {
 
     loaders: [{
@@ -19,6 +18,5 @@ module.exports = {
       test: /\.css$/,
       loader: 'style-loader!css-loader'
     }]
-
   },
 };
