@@ -7,7 +7,8 @@
     "server": "webpack-dev-server --history-api-fallback --watch-content-base --hot --progress --port 1111",
     "start": "npm run server",
     "deploy": "NODE_ENV=production webpack -p && NODE_ENV=production node server",
-    "test": "karma start ./karma.conf.js --single-run"
+    "run": "webpack -p",
+    "test": "karma start ./karma.conf.js "
   },
   "devDependencies": {
     "angular-mocks": "^1.6.4",
