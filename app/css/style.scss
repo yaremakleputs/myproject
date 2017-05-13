@@ -1065,6 +1065,13 @@ md-toast {
       width: 75px;
     }
   }
+
+  .teacher {
+    .avatar {
+      height: 170px;
+      width: 170px;
+    }
+  }
 }
 
 .upload-photo {
@@ -1105,6 +1112,22 @@ md-toast {
 
 // Bottle eport styles fix //
 
+.report-teacher {
+  background: none;
+  border: none;
+
+  .upload-photo-teacher {
+    height: 170px;
+    width: 170px;
+
+    label {
+      padding-top: 45%;
+    }
+  }
+}
+
+// Bottle report styles fix //
+
 .report,
 .container {
   border-bottom: 0;
@@ -1141,4 +1164,52 @@ side-bar {
 
 .menu {
   margin-top: 0;
+}
+
+
+// Style for profile component
+
+.profile-title {
+  background-color: $green-color;
+
+  .ng-binding {
+    margin-top: 0;
+  }
+
+  h1 {
+    color: white;
+    font-family: 'Open Sans', sans-serif;
+    font-size: 24px;
+    font-weight: 100;
+    margin-top: 0;
+    padding: 42px 25px;
+    text-align: center;
+  }
+}
+
+.profile-main {
+  text-align: left;
+
+  .profile-main-info {
+    padding-bottom: 15px;
+
+    b {
+      display: inline-block;
+      padding-right: 10px;
+    }
+  }
+}
+
+.profile-title-update {
+  .profile-main-info {
+    padding-bottom: 0;
+  }
+
+  .profile-input-container {
+    margin-bottom: 0;
+  }
+
+  .profile-select-language {
+    width: 50%;
+  }
 }
