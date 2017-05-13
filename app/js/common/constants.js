@@ -4,7 +4,8 @@ module.exports = angular
     SERVER_URL: 'http://localhost:3000',
     SERVER_URL_V1: 'http://localhost:3000/v1',
     MAIN_STATE: 'main.presenceReport',
-    LOGIN_STATE: 'login'
+    LOGIN_STATE: 'login',
+    STUDENT_IMG: './app/img/student.png'
   })
   .constant('errorMessages', {
     NO_AUTH: 'Invalid Email/Password',
@@ -15,10 +16,10 @@ module.exports = angular
       {name: 'Teacher report',  link: '#', submenu: [
         {name: 'Presence',          link: 'main.presenceReport'},
         {name: 'Diet',              link: '#'},
-        {name: 'Bottle',            link: '#'},
+        {name: 'Bottle',            link: 'main.bottleReport'},
         {name: 'Meals',             link: '#'},
         {name: 'Potty',             link: '#'},
-        {name: 'Nap',               link: '#'},
+        {name: 'Nap',               link: 'main.static'},
         {name: 'Rewards',           link: '#'},
         {name: 'Personal notes',    link: '#'},
         {name: 'Class notes',       link: '#'}
