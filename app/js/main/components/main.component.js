@@ -9,6 +9,7 @@ module.exports = angular
     controller: MainController,
     bindings: {
       groups: '<'
+
     }
   });
 
@@ -25,9 +26,8 @@ function MainController($scope, $state, auth, currentGroupDay, currentUser, glob
   var ctrl = this;
 
   ctrl.currentGroupDay = currentGroupDay;
-  ctrl.currentUserValues = currentUserValues;
   ctrl.currentUser = currentUser;
-  ctrl.fullname = ctrl.currentUser.first_name + ' ' + ctrl.currentUser.last_name;
+  ctrl.fullname = currentUser.first_name + ' ' + currentUser.last_name;
   ctrl.avatar = ctrl.currentUser.url || globalSettings.STUDENT_IMG;
 
   ctrl.logout = function() {
@@ -39,5 +39,10 @@ function MainController($scope, $state, auth, currentGroupDay, currentUser, glob
   $scope.$watch(
     function() { return currentGroupDay.group_id; },
     function() { $state.reload($state.current); }
+  );
+
+  $scope.$watch(
+    function() { return currentUser; },
+    function(currentUser) { $scope.currentUser = currentUser; }
   );
 };
