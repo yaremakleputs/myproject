@@ -1143,9 +1143,9 @@ md-content {
   background-color: white;
 }
 
-//  Login component  //
+//  Login, ForgotPassword, ResetPassword components  //
 
-login-component {
+login-component, forgot-component, reset-component {
   text-align: center;
 
   .hero-container {
@@ -1165,7 +1165,6 @@ side-bar {
 .menu {
   margin-top: 0;
 }
-
 
 // Style for profile component
 
@@ -1212,4 +1211,12 @@ side-bar {
   .profile-select-language {
     width: 50%;
   }
+}
+
+md-input-container:last-of-type {
+  margin-bottom: 0;
+}
+
+md-card-content{
+  padding-bottom: 0;
 }
