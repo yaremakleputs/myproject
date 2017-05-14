@@ -1,27 +1,33 @@
 var Resource = require('./../resources/my_day_report.resource.js');
+var toggleMessage = require('./toggleMessage/toggleMessage.service.js');
+
 module.exports = angular
   .module('myDayReport.service', [
-    Resource.name
+    Resource.name,
+    toggleMessage.name
     ])
   .factory('MyDayReport', MyDayReport);
 
-MyDayReport.$inject = ['myDayReportResource', 'currentGroupDay', '$mdToast'];
-function MyDayReport(myDayReportResource, currentGroupDay, $mdToast) {
+MyDayReport.$inject = ['myDayReportResource',
+                       'currentGroupDay',
+                       'errorMessages',
+                       'toggleMessage'];
+
+function MyDayReport(myDayReportResource,
+                     currentGroupDay,
+                     errorMessages,
+                     toggleMessage) {
   var service = {
     getReports: getReports,
-    updateReports: updateReports,
-    toggleErrorMsg: toggleErrorMsg
+    updateReports: updateReports
   };
   return service;
 
   function getReports() {
     return myDayReportResource.query({group_id: currentGroupDay.group_id,
                                       day: currentGroupDay.day})
-    .$promise.then(function(data) {
-      return data;
-    }, function(errors) {
-      service.toggleErrorMsg(errors);
-    });
+    .$promise
+    .then(responseSuccess, responseFailure);
   };
 
   function updateReports(note, id) {
@@ -29,21 +35,19 @@ function MyDayReport(myDayReportResource, currentGroupDay, $mdToast) {
                                       id: id,
                                       group_id: currentGroupDay.group_id,
                                       day: currentGroupDay.day})
-    .$promise.then(function(note) {
-      return note;
-    }, function(errors) {
-      service.toggleErrorMsg(errors);
-    });
+    .$promise
+    .then(responseSuccess, responseFailure);
   };
 
-  function toggleErrorMsg(response) {
-    var msg = response.data.errors;
+  function responseSuccess(data) {
+    return data;
+  };
 
-    $mdToast.show({
-      template: '<md-toast><div class="md-toast-content">' +
-                msg +
-              '</div></md-toast>',
-      position: 'top right'
-    });
-  }
+  function responseFailure(errorInfo) {
+    if (!errorInfo.data || errorInfo.data.length === 0) {
+      toggleMessage.showMessages([errorMessages.FAIL_RESPONSE]);
+    }else {
+      toggleMessage.showMessages([errorInfo.data.error]);
+    }
+  };
 };
