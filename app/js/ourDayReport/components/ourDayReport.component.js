@@ -19,8 +19,6 @@ function ourDayReportController(OurDayReportService) {
     function(data) {
       ctrl.students = data.students;
       ctrl.report = data.our_day;
-      console.log(ctrl.report);
-      // console.log(ctrl.report.description);
     }
   );
   ctrl.ourDayReportUpdate = function(report) {
@@ -28,6 +26,5 @@ function ourDayReportController(OurDayReportService) {
       .then(function(description) {
       return description;
     });
-  }
-  //ourDayReport(OurDayReportService.getReport());
+  };
 }

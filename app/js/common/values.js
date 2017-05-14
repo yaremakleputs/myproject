@@ -2,7 +2,7 @@ module.exports = angular
   .module('values', [])
   .value('currentGroupDay', {
     group_id: 0,
-    day: new Date()
+    day: new Date().toISOString().slice(0, 10).replace(/-/g, '')
   })
   .value('currentUser', {
     id: '',

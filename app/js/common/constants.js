@@ -1,8 +1,8 @@
 module.exports = angular
   .module('constants', [])
   .constant('globalSettings', {
-    SERVER_URL: 'http://neighbours-yaremakleputs.c9users.io:8080',
-    SERVER_URL_V1: 'http://neighbours-yaremakleputs.c9users.io:8080/v1',
+    SERVER_URL: 'http://localhost:3000',
+    SERVER_URL_V1: 'http://localhost:3000/v1',
     MAIN_STATE: 'main.presenceReport',
     LOGIN_STATE: 'login',
     STUDENT_IMG: './app/img/student.png'
@@ -22,7 +22,7 @@ module.exports = angular
         {name: 'Nap',               link: 'main.static'},
         {name: 'Rewards',           link: '#'},
         {name: 'Personal notes',    link: 'main.myDayReport'},
-        {name: 'Class notes',       link: '#'}
+        {name: 'Class notes',       link: 'main.ourDayReport'}
       ]},
       {name: 'Parens Sharing',  link: '#'},
       {name: 'Messages',        link: '#'},

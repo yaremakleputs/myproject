@@ -22,7 +22,6 @@ function HealthReport(healthReportResource, currentGroupDay, toggleMessage) {
   };
 
   function updateReports(health_note, special_care, id) {
-    debugger;
     var params = {report: {health_note: health_note, special_care: special_care},
                   id: id,
                   group_id: currentGroupDay.group_id};
