@@ -1,23 +1,26 @@
-<!-- <div class="health-report-title">
-  <h3>Health</h3>
+<div class="report-title" layout="row">
+  <h1>{{ 'report_title.HEALTH_REPORT'| translate}}</h1>
 </div>
- -->
+<div flex class="all-student-absent" ng-if="$ctrl.presence == 0">
+  <h1>{{ 'all_reports.STUDENTS_ABSENT'| translate}}</h1>
+  <p>{{ 'all_reports.ALL_STUDENTS_ABSENT'| translate}}</p>
+</div>
 <div class="health-report report container" layout="row" ng-repeat="report in $ctrl.reports">
   <div flex="25">
     <student-component student="report.student">
     </student-component>
   </div>
 
-  <div flex="25" ng-class="report.report.special_care == true ? 'true' : 'false'"
+  <div flex="25" ng-class="report.report.special_care == true ? 'red' : 'green'"
                  layout="row"
                  class="button-switch">
     <button ng-click="report.report.special_care = true"
             class="group-x left double-button">
-      Spacial care
+      {{'health_report.SPECIAL_CARE'| translate}}
     </button>
     <button ng-click="report.report.special_care = false"
             class="group-x right double-button">
-      Normal
+      {{'health_report.NORMAL'| translate}}
     </button>
   </div>
   <div flex="30">
@@ -27,8 +30,9 @@
   </div>
   <div flex="20" class="update" >
     <button class="group-x update-note-button"
-            ng-click="$ctrl.healthReportUpdate(report); $ctrl.reloadRoute()">
-      Update note
+            ng-click="$ctrl.healthReportUpdate(report); $ctrl.reload()">
+     {{'health_report.UPDATE'| translate}}
     </button>
   </div>
 </div>
+

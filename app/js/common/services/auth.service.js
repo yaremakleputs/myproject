@@ -123,12 +123,12 @@ function AuthFactory(
   }
 
   function saveCurrentUser(response) {
-    currentUser.first_name = response.first_name;
-    currentUser.last_name = response.last_name;
-    currentUser.locale = response.locale;
-    currentUser.id = response.id;
-    currentUser.url = response.url;
-    currentUser.phone = response.phone;
-    currentUser.email = response.email;
+    for (var currentUserProp in currentUser) {
+      for (var responseProp in response) {
+        if (currentUserProp == responseProp) {
+          currentUser[currentUserProp] = response[responseProp];
+        }
+      }
+    }
   }
 }

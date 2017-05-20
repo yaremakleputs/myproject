@@ -13,28 +13,28 @@ HealthReportController.$inject = ['HealthReport', 'currentGroupDay', '$state'];
 
 function HealthReportController(HealthReport, currentGroupDay, $state) {
   var ctrl = this;
-  ctrl.reports = [];
+  ctrl.reports = {};
   ctrl.currentGroupDay = currentGroupDay;
 
   ctrl.loadHealthReport = function() {
     HealthReport.getReports().then(
       function(data) {
         ctrl.reports = data;
+        ctrl.presence = ctrl.reports.length;
       }
     );
   };
 
   ctrl.healthReportUpdate = function(report) {
     HealthReport.updateReports(report.report.health_note,
-                               report.report.id,
                                report.report.special_care,
-                               report.student.id
-                               ).then(function() {
-      return report;
+                               report.report.id)
+      .then(function(data) {
+      return data;
     });
   };
 
-  ctrl.reloadRoute = function() {
+  ctrl.reload = function() {
     ctrl.loadHealthReport();
     $state.reload($state.current);
   };

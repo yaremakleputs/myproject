@@ -6,9 +6,9 @@ module.exports = angular
   ])
   .factory('HealthReport', HealthReport);
 
-HealthReport.$inject = ['healthReportResource', 'currentGroupDay'];
+HealthReport.$inject = ['healthReportResource', 'currentGroupDay', 'toggleMessage'];
 
-function HealthReport(healthReportResource, currentGroupDay) {
+function HealthReport(healthReportResource, currentGroupDay, toggleMessage) {
   var service = {
     getReports: getReports,
     updateReports: updateReports
@@ -16,21 +16,25 @@ function HealthReport(healthReportResource, currentGroupDay) {
   return service;
 
   function getReports() {
-    var params = {
-      group_id: currentGroupDay.group_id
-    };
-    return healthReportResource.query(params).$promise.then(function(data) {
-      return data;
-    });
+    var params = {group_id: currentGroupDay.group_id};
+    return healthReportResource.query(params).
+      $promise.then(responseSuccess, responseFailure);
   };
 
-  function updateReports(health_note, id, special_care, student_id) {
+  function updateReports(health_note, special_care, id) {
     var params = {report: {health_note: health_note, special_care: special_care},
                   id: id,
-                  student_id: student_id
-                 };
-    return healthReportResource.update(params).$promise.then(function(report) {
-      return report;
-    });
+                  group_id: currentGroupDay.group_id};
+    return healthReportResource.update(params).
+      $promise.then(responseSuccess, responseFailure);
+  };
+
+  function responseSuccess(data) {
+    return data;
+  };
+
+  function responseFailure(response) {
+    toggleMessage.returnDataErrors(response);
+    return response.data;
   };
 }

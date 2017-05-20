@@ -65,5 +65,9 @@
     "HEALTH_REPORT": "HEALTH REPORT",
     "BOTTLE_REPORT": "BOTTLE REPORT",
     "PRESENCE_REPORT": "PRESENCE REPORT"
+  },
+  "all_reports": {
+    "STUDENTS_ABSENT": "Students are absent.",
+    "ALL_STUDENTS_ABSENT": "All students in class are absent today."
   }
 }

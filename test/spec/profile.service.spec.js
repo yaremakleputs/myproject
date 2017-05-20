@@ -7,7 +7,6 @@ var togle = require('./../../app/js/common/services/toggleMessage/toggleMessage.
 describe('Profile Test', function() {
   var service;
   var $httpBackend;
-  var teacherServiceRequest;
   var teacher = {
       id: 4,
       first_name: 'Armando',

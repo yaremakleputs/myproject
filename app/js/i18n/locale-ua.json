@@ -1,4 +1,4 @@
-{  
+{
   "PROFILE": "Профіль",
   "SIGN_OUT": "Вийти з акаунту",
   "submenu": {
@@ -65,5 +65,9 @@
     "HEALTH_REPORT": "СПЕЦІАЛЬНИЙ ДОГЛЯД",
     "BOTTLE_REPORT": "ПЛЯШЕЧКИ",
     "PRESENCE_REPORT": "ПРИСУТНІСТЬ"
+  },
+  "all_reports": {
+    "STUDENTS_ABSENT": "Студенти відсутні.",
+    "ALL_STUDENTS_ABSENT": "Всі студенти сьогодні відсутні."
   }
 }
