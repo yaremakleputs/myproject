@@ -17,11 +17,11 @@
     <md-icon ng-click="$mdOpenMenu()">expand_more</md-icon>
     <md-menu-content width="3">
     <md-menu-item>
-      <md-button ui-sref="main.profile">Profile</md-button>
+      <md-button ui-sref="main.profile">{{ 'PROFILE' | translate }}</md-button>
     </md-menu-item>
     <md-menu-divider role="separator"></md-menu-divider>
     <md-menu-item>
-      <md-button ng-click="$ctrl.logout()">Sign out</md-button>
+      <md-button ng-click="$ctrl.logout()">{{ 'SIGN_OUT' | translate }}</md-button>
     </md-menu-item>
   </md-menu-content>
   </md-menu>

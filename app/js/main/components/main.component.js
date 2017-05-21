@@ -19,10 +19,12 @@ MainController.$inject = [
   'auth',
   'currentGroupDay',
   'currentUser',
-  'globalSettings'
+  'globalSettings',
+  '$translate'
 ];
 
-function MainController($scope, $state, auth, currentGroupDay, currentUser, globalSettings) {
+function MainController($scope, $state, auth, currentGroupDay,
+                        currentUser, globalSettings, $translate) {
   var ctrl = this;
 
   ctrl.currentGroupDay = currentGroupDay;
@@ -44,5 +46,10 @@ function MainController($scope, $state, auth, currentGroupDay, currentUser, glob
   $scope.$watch(
     function() { return currentUser; },
     function(currentUser) { $scope.currentUser = currentUser; }
+  );
+
+  $scope.$watch(
+    function() { return currentUser.locale; },
+    function() { $translate.use(currentUser.locale); }
   );
 };

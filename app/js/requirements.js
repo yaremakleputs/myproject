@@ -5,5 +5,8 @@ module.exports = angular
     require('angular-messages'),
     require('angular-local-storage'),
     require('angular-material'),
-    require('angular-base64-upload')
-  ]);
+    require('angular-base64-upload'),
+    'pascalprecht.translate',
+    require('angular-translate'),
+    require('angular-translate-loader-static-files')
+    ]);
