@@ -31,7 +31,7 @@ function MainController($scope, $state, auth, currentGroupDay,
   ctrl.currentGroupDay = currentGroupDay;
   ctrl.currentUser = currentUser;
   ctrl.fullname = currentUser.first_name + ' ' + currentUser.last_name;
-  ctrl.avatar = ctrl.currentUser.url || globalSettings.STUDENT_IMG;
+  ctrl.defaultPhoto = globalSettings.STUDENT_IMG;
 
   ctrl.logout = function() {
     auth.logout();

@@ -6,7 +6,9 @@
   <div layout="row" class="profile-main"  layout-align="none">
     <div flex="50" class='report report-teacher'>
       <div class="student teacher">
-          <img src='{{$ctrl.avatar}}' class='avatar' alt='avatar'>
+          <img src='{{$ctrl.teacher.url || $ctrl.defaultPhoto}}'
+               class='avatar'
+               alt='avatar'>
       </div>
     </div>
 
@@ -64,7 +66,9 @@
           <div class='student teacher' layout='row'>
             <form name='uploadForm'>
               <div class='upload-photo upload-photo-teacher'>
-                <img src='{{$ctrl.teacher.url}}' class='avatar' alt='avatar'>
+                <img src='{{$ctrl.teacher.url || $ctrl.defaultPhoto}}'
+                     class='avatar'
+                     alt='avatar'>
                 <label for='file{{$ctrl.teacher.id}}' class='overlay'>
                   <md-icon>add_a_photo</md-icon>
                 </label>

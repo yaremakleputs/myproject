@@ -12,7 +12,6 @@ angular
     valuesModule.name,
     mainModule.name,
     tokenInjector.name
-
   ])
  .config(['$locationProvider', '$httpProvider', 'localStorageServiceProvider',
     function($locationProvider, $httpProvider, localStorageServiceProvider) {
