@@ -2,8 +2,7 @@ var healthVendor = require('./../../app/js/requirements.js');
 var HealthReport = require('./../../app/js/common/services/healthReport.service.js');
 var constantsModule = require('./../../app/js/common/constants.js');
 var valuesModule = require('./../../app/js/common/values.js');
-var toggleMessage =
-  require('./../../app/js/common/services/toggleMessage/toggleMessage.service.js');
+var toggle = require('./../../app/js/common/services/toggleMessage/toggleMessage.service.js');
 
 describe('Health Report Test', function() {
   var service;
@@ -27,7 +26,7 @@ describe('Health Report Test', function() {
                                  HealthReport.name,
                                  constantsModule.name,
                                  valuesModule.name,
-                                 toggleMessage.name
+                                 toggle.name
                                  ));
 
   beforeEach(inject(function($injector) {
@@ -66,9 +65,10 @@ describe('Health Report Test', function() {
     expect(JSON.stringify(response)).toEqual(JSON.stringify(reports));
   }));
 
-  it('error message updated report', inject(function(toggleMessage,
+  it('it can return error message when updated report', inject(function(toggleMessage,
                                                      globalSettings,
                                                      currentGroupDay) {
+
     $httpBackend.whenPUT(globalSettings.SERVER_URL_V1 + '/health_reports/' +
       report.id + '.json?group_id=' + currentGroupDay.group_id).respond(400, errors);
 
@@ -90,6 +90,7 @@ describe('Health Report Test', function() {
   it('when updated report', inject(function(toggleMessage,
                                             globalSettings,
                                             currentGroupDay) {
+
     $httpBackend.whenPUT(globalSettings.SERVER_URL_V1 + '/health_reports/' +
       report.id + '.json?group_id=' + currentGroupDay.group_id).respond(200, report);
 

@@ -26,9 +26,10 @@ function HealthReportController(HealthReport, currentGroupDay, $state) {
   };
 
   ctrl.healthReportUpdate = function(report) {
-    HealthReport.updateReports(report.report.health_note,
-                               report.report.special_care,
-                               report.report.id)
+    HealthReport.updateReports(report.health_note,
+                               report.special_care,
+                               report.id,
+                               currentGroupDay.group_id)
       .then(function(data) {
       return data;
     });

@@ -11,28 +11,33 @@
     </student-component>
   </div>
 
-  <div flex="25" ng-class="report.report.special_care == true ? 'red' : 'green'"
-                 layout="row"
-                 class="button-switch">
-    <button ng-click="report.report.special_care = true"
-            class="group-x left double-button">
-      {{'health_report.SPECIAL_CARE'| translate}}
-    </button>
-    <button ng-click="report.report.special_care = false"
-            class="group-x right double-button">
-      {{'health_report.NORMAL'| translate}}
-    </button>
-  </div>
-  <div flex="30">
-    <textarea rows="5" cols="45" ng-model="report.report.health_note"
-                                 name="text"
-                                 class="text-area-health-note"></textarea>
-  </div>
-  <div flex="20" class="update" >
-    <button class="group-x update-note-button"
-            ng-click="$ctrl.healthReportUpdate(report); $ctrl.reload()">
-     {{'health_report.UPDATE'| translate}}
-    </button>
-  </div>
+  <form ng-submit="$ctrl.healthReportUpdate(report.report); $ctrl.reload()"
+        flex="75"
+        layout="row">
+    <div flex="35" ng-class="report.report.special_care == true ? 'red' : 'green'"
+                   layout="row"
+                   class="button-switch">
+      <button ng-click="report.report.special_care = true"
+              class="group-x left double-button">
+        {{'health_report.SPECIAL_CARE'| translate}}
+      </button>
+      <button ng-click="report.report.special_care = false"
+              class="group-x right double-button">
+        {{'health_report.NORMAL'| translate}}
+      </button>
+    </div>
+    <div flex="40">
+      <textarea rows="5" cols="45" ng-model="report.report.health_note"
+                                   name="text"
+                                   class="text-area-health-note"></textarea>
+    </div>
+    <div flex="25" class="update" >
+      <md-card-actions>
+        <md-button class='btn green-btn' type='submit'>
+          {{'health_report.UPDATE'| translate}}
+        </md-button>
+      </md-card-actions>
+    </div>
+  </form>
 </div>
 

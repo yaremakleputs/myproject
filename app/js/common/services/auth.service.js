@@ -124,11 +124,7 @@ function AuthFactory(
 
   function saveCurrentUser(response) {
     for (var currentUserProp in currentUser) {
-      for (var responseProp in response) {
-        if (currentUserProp == responseProp) {
-          currentUser[currentUserProp] = response[responseProp];
-        }
-      }
+      currentUser[currentUserProp] = response[currentUserProp];
     }
   }
 }
