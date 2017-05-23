@@ -66,11 +66,10 @@ describe('Health Report Test', function() {
   }));
 
   it('it can return error message when updated report', inject(function(toggleMessage,
-                                                     globalSettings,
-                                                     currentGroupDay) {
+                                                     globalSettings) {
 
     $httpBackend.whenPUT(globalSettings.SERVER_URL_V1 + '/health_reports/' +
-      report.id + '.json?group_id=' + currentGroupDay.group_id).respond(400, errors);
+      report.id + '.json').respond(400, errors);
 
     var response;
     var health_note = report.health_note;
@@ -88,11 +87,10 @@ describe('Health Report Test', function() {
   }));
 
   it('when updated report', inject(function(toggleMessage,
-                                            globalSettings,
-                                            currentGroupDay) {
+                                            globalSettings) {
 
     $httpBackend.whenPUT(globalSettings.SERVER_URL_V1 + '/health_reports/' +
-      report.id + '.json?group_id=' + currentGroupDay.group_id).respond(200, report);
+      report.id + '.json').respond(200, report);
 
     var response;
     var health_note = report.health_note;

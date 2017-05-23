@@ -21,11 +21,11 @@ function HealthReport(healthReportResource, currentGroupDay, toggleMessage) {
       $promise.then(responseSuccess, responseFailure);
   };
 
-  function updateReports(health_note, special_care, id, group_id) {
+  function updateReports(health_note, special_care, id) {
     debugger;
     var params = {report: {health_note: health_note, special_care: special_care},
                   id: id,
-                  group_id: group_id};
+                  group_id: currentGroupDay.group_id};
     return healthReportResource.update(params).
       $promise.then(responseSuccess, responseFailure);
   };
