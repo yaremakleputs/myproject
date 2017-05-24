@@ -7,7 +7,6 @@ var togle = require('./../../app/js/common/services/toggleMessage/toggleMessage.
 describe('Profile Test', function() {
   var service;
   var $httpBackend;
-  var teacherServiceRequest;
   var teacher = {
       id: 4,
       first_name: 'Armando',
@@ -19,6 +18,7 @@ describe('Profile Test', function() {
     filetype: 'image/png',
     base64: 'base64'
   };
+  var errors = {errors: ['Error message']};
 
   beforeEach(angular.mock.module(profileVendor.name,
                                  profileService.name,
@@ -72,4 +72,38 @@ describe('Profile Test', function() {
 
     expect(JSON.stringify(response)).toEqual(JSON.stringify(teacher));
   });
+
+  it('it can return error message when updated teacher', inject(function(toggleMessage,
+                                                         globalSettings) {
+
+    $httpBackend.whenPUT(constant.SERVER_URL_V1 + '/teachers/' + teacher.id + '.json')
+      .respond(400, errors);
+
+    var response;
+    spyOn(toggleMessage, 'returnDataErrors');
+    service.updateProfile(teacher).then(function(updateProfile) {
+      response = updateProfile;
+    });
+
+    $httpBackend.flush();
+
+    expect(JSON.stringify(response)).toEqual(JSON.stringify(errors));
+  }));
+
+  it('it can return error message when upload photo', inject(function(toggleMessage,
+                                                      globalSettings) {
+
+    $httpBackend.whenPUT(constant.SERVER_URL_V1 + '/teachers/' + teacher.id +
+      '/upload.json').respond(400, errors);
+
+    var response;
+    spyOn(toggleMessage, 'returnDataErrors');
+    service.uploadPhoto(teacher.id, file).then(
+      function(data) {response = data;}
+    );
+
+    $httpBackend.flush();
+
+    expect(JSON.stringify(response)).toEqual(JSON.stringify(errors));
+  }));
 });

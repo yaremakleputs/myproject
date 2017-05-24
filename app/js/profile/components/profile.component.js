@@ -15,11 +15,15 @@ ProfileController.$inject = ['profileService',
                              'globalSettings',
                              '$state'];
 
-function ProfileController(profileService, currentUser, toggleMessage, globalSettings, $state) {
+function ProfileController(profileService,
+                           currentUser,
+                           toggleMessage,
+                           globalSettings,
+                           $state) {
   var ctrl = this;
   ctrl.teacher = currentUser;
   ctrl.showDiv = true;
-  ctrl.avatar = ctrl.teacher.url || globalSettings.STUDENT_IMG;
+  ctrl.defaultPhoto = globalSettings.STUDENT_IMG;
 
   ctrl.hideDiv = function() {
     ctrl.showDiv = true;

@@ -39,6 +39,7 @@ function profileService(profileResource, $mdToast, toggleMessage, $q) {
   };
 
   function responseFailure(response) {
-    toggleMessage.showMessages(response.data.errors);
+    toggleMessage.returnDataErrors(response);
+    return response.data;
   };
 }

@@ -1,0 +1,43 @@
+<div class="report-title" layout="row">
+  <h1>{{ 'report_title.HEALTH_REPORT'| translate}}</h1>
+</div>
+<div flex class="all-student-absent" ng-if="$ctrl.presence == 0">
+  <h1>{{ 'all_reports.STUDENTS_ABSENT'| translate}}</h1>
+  <p>{{ 'all_reports.ALL_STUDENTS_ABSENT'| translate}}</p>
+</div>
+<div class="health-report report container" layout="row" ng-repeat="report in $ctrl.reports">
+  <div flex="25">
+    <student-component student="report.student">
+    </student-component>
+  </div>
+
+  <form ng-submit="$ctrl.healthReportUpdate(report.report); $ctrl.reload()"
+        flex="75"
+        layout="row">
+    <div flex="35" ng-class="report.report.special_care == true ? 'red' : 'green'"
+                   layout="row"
+                   class="button-switch">
+      <button ng-click="report.report.special_care = true"
+              class="group-x left double-button">
+        {{'health_report.SPECIAL_CARE'| translate}}
+      </button>
+      <button ng-click="report.report.special_care = false"
+              class="group-x right double-button">
+        {{'health_report.NORMAL'| translate}}
+      </button>
+    </div>
+    <div flex="40">
+      <textarea rows="5" cols="45" ng-model="report.report.health_note"
+                                   name="text"
+                                   class="text-area-health-note"></textarea>
+    </div>
+    <div flex="25" class="update" >
+      <md-card-actions>
+        <md-button class='btn green-btn' type='submit'>
+          {{'health_report.UPDATE'| translate}}
+        </md-button>
+      </md-card-actions>
+    </div>
+  </form>
+</div>
+
