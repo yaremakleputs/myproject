@@ -24,17 +24,18 @@ function MyDayReport(myDayReportResource,
   return service;
 
   function getReports() {
-    return myDayReportResource.query({group_id: currentGroupDay.group_id,
-                                      day: currentGroupDay.day})
+    var params = {group_id: currentGroupDay.group_id};
+    return myDayReportResource.query(params)
     .$promise
     .then(responseSuccess, responseFailure);
   };
 
   function updateReports(note, id) {
-    return myDayReportResource.update({report: {note: note},
-                                      id: id,
-                                      group_id: currentGroupDay.group_id,
-                                      day: currentGroupDay.day})
+    var params = {report: {note: note},
+                  id: id,
+                  group_id: currentGroupDay.group_id
+                };
+    return myDayReportResource.update(params)
     .$promise
     .then(responseSuccess, responseFailure);
   };
@@ -43,11 +44,7 @@ function MyDayReport(myDayReportResource,
     return data;
   };
 
-  function responseFailure(errorInfo) {
-    if (!errorInfo.data || errorInfo.data.length === 0) {
-      toggleMessage.showMessages([errorMessages.FAIL_RESPONSE]);
-    }else {
-      toggleMessage.showMessages([errorInfo.data.error]);
-    }
+  function responseFailure(response) {
+    toggleMessage.returnDataErrors(response);
   };
 };

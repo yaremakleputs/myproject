@@ -32,7 +32,7 @@ module.exports = angular
     profileModule.name,
     forgotPasswordModule.name,
     resetPasswordModule.name,
-    healthReportModule.name
+    healthReportModule.name,
     staticModule.name,
     myDayReportModule.name
   ])
