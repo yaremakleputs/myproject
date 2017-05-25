@@ -14,10 +14,10 @@
     </div>
     <form ng-submit="$ctrl.ourDayReportUpdate($ctrl.report.description)"
           class="our-day-report-form"
-          ng-if="$ctrl.report">
+          ng-if="$ctrl.report"
+          layout="row">
       <textarea class="class-notes"
-                ng-model="$ctrl.report.description"
-                layout="row">
+                ng-model="$ctrl.report.description">
       </textarea>
       <md-card-actions>
         <md-button class="btn green-btn" type='submit'>

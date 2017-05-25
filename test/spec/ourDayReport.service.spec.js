@@ -12,9 +12,9 @@ describe('OurDay Report Test', function() {
 
   var report = {group_id: 1,
                 day: Date.today,
-                our_day: {description: some_report}};
+                our_day: {description: description}};
 
-  var some_report = 'Some description';
+  var description = 'Some description';
 
   var errors = {errors: ['Error message']};
 
@@ -47,9 +47,8 @@ describe('OurDay Report Test', function() {
                                                 globalSettings,
                                                 currentGroupDay) {
 
-    $httpBackend.whenGET(globalSettings.SERVER_URL_V1 +
-      '/our_day.json?group_id=' + currentGroupDay.group_id +
-      '&day=' + currentGroupDay.day).respond(200, report);
+    $httpBackend.whenGET(globalSettings.SERVER_URL_V1 + '/our_day.json?group_id=' +
+      currentGroupDay.group_id + '&day=' + currentGroupDay.day).respond(200, report);
 
     var response;
     spyOn(toggleMessage, 'showMessages');
@@ -66,11 +65,9 @@ describe('OurDay Report Test', function() {
                                             globalSettings,
                                             currentGroupDay) {
 
-    $httpBackend.whenPUT(globalSettings.SERVER_URL_V1 +
-      '/our_day.json').respond(200, report);
+    $httpBackend.whenPUT(globalSettings.SERVER_URL_V1 + '/our_day.json').respond(200, report);
 
     var response;
-    var description = some_report;
 
     spyOn(toggleMessage, 'showMessages');
     service.updateReport(description).then(function(updatedReport) {
@@ -86,11 +83,9 @@ describe('OurDay Report Test', function() {
                                                                         globalSettings,
                                                                         currentGroupDay) {
 
-    $httpBackend.whenPUT(globalSettings.SERVER_URL_V1 +
-      '/our_day.json').respond(400, errors);
+    $httpBackend.whenPUT(globalSettings.SERVER_URL_V1 + '/our_day.json').respond(400, errors);
 
     var response;
-    var description = some_report;
 
     spyOn(toggleMessage, 'returnDataErrors');
     service.updateReport(description).then(function(updatedReport) {
