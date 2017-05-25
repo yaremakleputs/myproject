@@ -6,7 +6,6 @@ var resetPasswordModule = require('./../resetPassword/resetPassword.module.js');
 var presenceReportModule = require('./../presenceReport/presenceReport.module.js');
 var studentModule = require('./../student/student.module.js');
 var groupService = require('./../common/services/group.service.js');
-var staticModule = require('./../static/static.module.js');
 var toggleMessage = require('./../common/services/toggleMessage/toggleMessage.service.js');
 var bottleReportModule = require('.././bottleReport/bottleReport.module.js');
 var sideBarModule = require('./../sidebar/sidebar.module.js');
@@ -33,7 +32,6 @@ module.exports = angular
     forgotPasswordModule.name,
     resetPasswordModule.name,
     healthReportModule.name,
-    staticModule.name,
     myDayReportModule.name
   ])
 

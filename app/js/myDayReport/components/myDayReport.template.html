@@ -1,11 +1,11 @@
-<div class="report my-day" ng-repeat="report in $ctrl.students">
+<div class="report my-day" ng-repeat="report in $ctrl.reports">
   <md-list>
     <md-list-item>
       <student-component student="report.student" class="student-info" layout="row"></student-component>
-        <form ng-submit="$ctrl.myDayReportUpdate(report)">
-          <textarea class="general" ng-model="report.note"></textarea>
-          <md-button class="btn green-btn" type="submit">{{'my_day_report.UPDATE_NOTE' | translate}}</md-button>
-        </form>
+      <form ng-submit="$ctrl.myDayReportUpdate(report)">
+        <textarea class="general" ng-model="report.note"></textarea>
+        <md-button class="btn green-btn" type="submit">{{'my_day_report.UPDATE_NOTE' | translate}}</md-button>
+      </form>
     </md-list-item>
   </md-list>
 </div>

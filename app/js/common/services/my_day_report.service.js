@@ -10,12 +10,10 @@ module.exports = angular
 
 MyDayReport.$inject = ['myDayReportResource',
                        'currentGroupDay',
-                       'errorMessages',
                        'toggleMessage'];
 
 function MyDayReport(myDayReportResource,
                      currentGroupDay,
-                     errorMessages,
                      toggleMessage) {
   var service = {
     getReports: getReports,
@@ -26,18 +24,17 @@ function MyDayReport(myDayReportResource,
   function getReports() {
     var params = {group_id: currentGroupDay.group_id};
     return myDayReportResource.query(params)
-    .$promise
-    .then(responseSuccess, responseFailure);
+    .$promise.then(responseSuccess, responseFailure);
   };
 
   function updateReports(note, id) {
-    var params = {report: {note: note},
-                  id: id,
-                  group_id: currentGroupDay.group_id
-                };
+    var params = {
+      report: {note: note},
+      id: id,
+      group_id: currentGroupDay.group_id
+    };
     return myDayReportResource.update(params)
-    .$promise
-    .then(responseSuccess, responseFailure);
+    .$promise.then(responseSuccess, responseFailure);
   };
 
   function responseSuccess(data) {

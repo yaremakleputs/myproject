@@ -12,10 +12,10 @@ module.exports = angular
 MyDayReportController.$inject = ['MyDayReport'];
 function MyDayReportController(MyDayReport) {
   var ctrl = this;
-  ctrl.students = [];
+  ctrl.reports = [];
   MyDayReport.getReports().then(
     function(data) {
-      ctrl.students = data;
+      ctrl.reports = data;
     });
 
   ctrl.myDayReportUpdate = function(student) {

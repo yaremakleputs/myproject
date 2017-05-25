@@ -6,9 +6,9 @@ module.exports = angular
     ])
   .factory('healthReportResource', healthReportResource);
 
-healthReportResource.$inject = ['$resource', 'globalSettings', 'currentGroupDay'];
+healthReportResource.$inject = ['$resource', 'globalSettings'];
 
-function healthReportResource($resource, globalSettings, currentGroupDay) {
+function healthReportResource($resource, globalSettings) {
   return $resource(globalSettings.SERVER_URL_V1 + '/health_reports/:id.json',
   {id: '@id'},
   {'update': {method: 'PUT'}});

@@ -82,5 +82,4 @@ describe('MyDayReport Test', function() {
 
     expect(JSON.stringify(response)).toEqual(JSON.stringify(report));
   }));
-
 });
