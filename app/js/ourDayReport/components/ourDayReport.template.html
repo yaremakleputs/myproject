@@ -13,9 +13,7 @@
       <p>{{ 'our_day_report.ALL_STUDENTS_ABSENT'| translate}}</p>
     </div>
     <form ng-submit="$ctrl.ourDayReportUpdate($ctrl.report.description)"
-          class="our-day-report-form"
-          ng-if="$ctrl.report"
-          layout="row">
+          ng-if="$ctrl.report">
       <textarea class="class-notes"
                 ng-model="$ctrl.report.description">
       </textarea>

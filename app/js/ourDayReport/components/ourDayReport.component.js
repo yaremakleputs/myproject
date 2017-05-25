@@ -4,7 +4,7 @@ module.exports = angular
   .module('ourDayReport.component', [
     OurDayReportService.name
     ])
-  .component('ourDayReportComponent', {
+  .component('ourDayReport', {
     templateUrl: './app/js/ourDayReport/components/ourDayReport.template.html',
     controller: ourDayReportController
   });
@@ -22,8 +22,8 @@ function ourDayReportController(OurDayReportService) {
     }
   );
   ctrl.ourDayReportUpdate = function(report) {
-    OurDayReportService.updateReport(report)
-      .then(function(description) {
+    OurDayReportService.updateReport(report).then(
+      function(description) {
       return description;
     });
   };
