@@ -18,9 +18,11 @@ function OurDayReportService(ourDayReportResource, currentGroupDay, toggleMessag
       group_id: currentGroupDay.group_id,
       day: currentGroupDay.day
     };
-    return ourDayReportResource.get(params).$promise.then(function(data) {
-      return data;
-    });
+    return ourDayReportResource.get(params).$promise.then(responseOk, responseFailure);
+  };
+
+  function responseOk(data) {
+    return data;
   };
 
   function updateReport(description) {

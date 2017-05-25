@@ -8,19 +8,22 @@
     </div>
   </div>
   <div class="our-day-report" flex="75">
-    <div flex class="all-student-absent" ng-if="!$ctrl.report">
+    <div class="all-student-absent" ng-if="!$ctrl.report">
       <h1>{{ 'our_day_report.STUDENTS_ABSENT'| translate}}</h1>
       <p>{{ 'our_day_report.ALL_STUDENTS_ABSENT'| translate}}</p>
     </div>
-    <div flex class="our-day-report-form" ng-if="$ctrl.report" simditor>
+    <form ng-submit="$ctrl.ourDayReportUpdate($ctrl.report.description)"
+          class="our-day-report-form"
+          ng-if="$ctrl.report">
       <textarea class="class-notes"
                 ng-model="$ctrl.report.description"
                 layout="row">
       </textarea>
-      <md-button class="btn green-btn"
-        ng-click="$ctrl.ourDayReportUpdate($ctrl.report.description)">
+      <md-card-actions>
+        <md-button class="btn green-btn" type='submit'>
           {{ 'our_day_report.UPDATE'| translate}}
-      </md-button>
-    </div>
+        </md-button>
+      </md-card-actions>
+    </form>
   </div>
 </div>

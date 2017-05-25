@@ -52,7 +52,6 @@ describe('Service: Student', function() {
 
   it('#uploadPhoto is defined', function() {
     expect(service.uploadPhoto).toBeDefined();
-    expect(service.uploadPhoto).toBeDefined();
   });
 
   it('should return student json when resolved', function() {
